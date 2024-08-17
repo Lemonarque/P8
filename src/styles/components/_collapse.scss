@@ -1,0 +1,56 @@
+.collapse {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+  &__dropdown {
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 80%;
+    }
+
+    &__title {
+      @extend %flex-between;
+      padding: 0.5em 1em;
+      width: 100%;
+      background-color: $primary-color;
+      margin: 0 auto;
+      margin-top: 1.5em;
+      border-radius: 5px;
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        width: 100%;
+      }
+
+      h2 {
+        color: $tertiary-color;
+        @include font(24px, 500);
+      }
+      p {
+        color: $tertiary-color;
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+    &__content {
+      background-color: $secondary-color;
+      width: 100%;
+
+      border-radius: 5px;
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        width: 100%;
+      }
+
+      p {
+        @include font(20px, 400);
+        color: $primary-color;
+        margin: 0 auto;
+        padding: 0.8em;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.card {
+  width: 100%;
+  height: 255px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  animation: fadeInUp 600ms ease-in-out;
+  overflow: hidden;
+
+
+  &_img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: inherit;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+
+  &_title {
+    position: absolute;
+    bottom: 0;
+    @include font(18px, 500);
+    margin: 15px 20px;
+    color: $tertiary-color;
+    box-sizing: inherit;
+  }
+
+  &_overlay {
+    position: absolute;
+    top: 0;
+    @include linear-gradient;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    
+  }
+  &:hover {
+    > .card_img {
+      transform: scale(1.01);
+    }
+  }
+ 
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
