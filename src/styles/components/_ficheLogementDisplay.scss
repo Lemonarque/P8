@@ -1,0 +1,112 @@
+.Fiche-container {
+  color: $primary-color;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.Fiche-logement {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.description-info {
+  @include flex-column;
+  &__titletags {
+    @include flex-column;
+
+    &__title {
+      @include flex-column;
+      margin-bottom: 15px;
+      .titre-logement {
+        @include font(18px, 500);
+      }
+      .endroit-logement {
+        @include font(14px, 500);
+      }
+    }
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__titletags {
+      @include flex-column;
+      margin-bottom: 30px;
+      &__title {
+        @include flex-column;
+
+        .titre-logement {
+          @include font(36px, 500);
+          display: flex;
+          align-items: flex-end;
+        }
+        .endroit-logement {
+          @include font(18px, 500);
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+
+  &__proprietaire {
+    @extend %flex-rowReverse;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__nom-prop {
+      @extend %flex-rowCenter;
+      .nom-proprietaire {
+        @include font(18px, 500);
+        margin-right: 10px;
+        text-align: right;
+        width: 93px;
+      }
+      .photo-proprietaire {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+      }
+    }
+    &__rate {
+      @include flex-end;
+      margin-top: 20px;
+      .etoile {
+        width: 15px;
+        height: 15px;
+
+        @media screen and (min-width: $breakpoint-desktop) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+.description-centent {
+  width: 100%;
+  @include flex-column;
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__description {
+      width: 50%;
+      padding-right: 40px;
+    }
+    &__equipement {
+      width: 50%;
+      padding-left: 40px;
+    }
+  }
+}
